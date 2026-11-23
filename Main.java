@@ -1,30 +1,41 @@
 package ihablab3;
-import java.util.*;
+
+import java.util.Scanner;
+
 public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        UML lab = new UML();
 
-	public static void main(String[] args) {
-		Scanner c=new Scanner(System.in);
-		UML u=new UML();
-		System.out.println(u.GCD(3,6));
-		System.out.println(u.factorial(4));
-        System.out.println(u.fibonacci(6));
-        System.out.println(u.power(2.5, 6));
-        System.out.println(u.sumofdigits(123));
-        System.out.println();
-        System.out.println("Enter the size of the array: ");
-        int n = c.nextInt();
-        int[] arr=new int[n];
-        for(int i=0;i<n;i++) {
-        	System.out.println("Enter element "+(i+1)+" of the aray: ");
-        	arr[i]=c.nextInt();
+        System.out.println("GCD(3, 6): " + lab.GCD(3, 6));
+        System.out.println("4!: " + lab.factorial(4));
+        System.out.println("Fibonacci(6): " + lab.fibonacci(6));
+        System.out.println("2.5 ^ 6: " + lab.power(2.5, 6));
+        System.out.println("Sum of digits of 123: " + lab.sumofdigits(123));
+
+        System.out.print("Enter the size of the array: ");
+        int n = input.nextInt();
+        if (n < 0) {
+            System.out.println("Array size cannot be negative.");
+            return;
         }
-        System.out.println("Enter the element of search: ");
-        int x=c.nextInt();
-        u.recursivelinearsearch(arr, n, x);
-        u.BinarySearch(arr, x, n, x);
-        u.issorted(arr, n);
-        u.arraysum(arr, n);
-       
-	}
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter element " + (i + 1) + ": ");
+            arr[i] = input.nextInt();
+        }
+        System.out.print("Enter the element to search for: ");
+        int x = input.nextInt();
 
+        System.out.println("Linear search:");
+        lab.recursivelinearsearch(arr, 0, x);
+
+        if (lab.issorted(arr, n)) {
+            System.out.println("Binary search:");
+            lab.BinarySearch(arr, 0, n - 1, x);
+        } else {
+            System.out.println("Binary search skipped (array is not sorted).");
+        }
+        System.out.println("Array sum: " + lab.arraysum(arr, n));
+    }
 }
