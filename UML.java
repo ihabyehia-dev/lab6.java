@@ -1,5 +1,6 @@
 package ihablab3;
 
+/** Recursive algorithms and search methods used by the lab exercises. */
 public class UML {
     int GCD(int a, int b) {
         a = Math.abs(a);
