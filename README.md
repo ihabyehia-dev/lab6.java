@@ -13,4 +13,4 @@ Recursion exercises in Java, using a class called `UML` and a small console demo
 Import `UML.java` and `Main.java` into the Eclipse package `ihablab3`, then run `Main.java`.
 
 ## Important
-The power, binary search, linear search, sum and recursion base cases were corrected. The main program uses binary search only when the array is sorted. These remain educational methods, not a production algorithms library.
+The recursion exercises cover powers, binary and linear searches, array sums and base cases. The main program uses binary search only when the array is sorted. These remain educational methods, not a production algorithms library.
