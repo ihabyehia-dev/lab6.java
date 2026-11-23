@@ -2,6 +2,7 @@ package ihablab3;
 
 import java.util.Scanner;
 
+/** Console demonstration of the recursion and search methods. */
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
